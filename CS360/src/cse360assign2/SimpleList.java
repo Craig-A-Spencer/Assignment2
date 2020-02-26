@@ -143,23 +143,3 @@ public class SimpleList {
 		return list;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
