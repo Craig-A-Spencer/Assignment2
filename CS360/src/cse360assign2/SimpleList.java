@@ -9,7 +9,8 @@ package cse360assign2;
  * as a String using the toString() method.
 */
 
-public class SimpleList {
+public class SimpleList
+{
 
 	//Instance variables
 	private int[] list;
@@ -17,29 +18,37 @@ public class SimpleList {
 	final int LIST_SIZE = 10;
 	
 	//Constructor for the SimpleList class
-	SimpleList () {
+	SimpleList ()
+	{
 		list = new int[LIST_SIZE];
 		count = 0;
 	}
 	
 	//Adds a new number to the list
-	public void add(int newNum) {
-		for (int index = LIST_SIZE - 2; index >= 0; index--) {
+	public void add(int newNum)
+	{
+		for (int index = LIST_SIZE - 2; index >= 0; index--)
+		{
 			list[index + 1] = list[index];
 		}
 		
 		list[0] = newNum;
 		
 		if (count < LIST_SIZE)
+		{
 			count++;
+		}
 	}
 	
 	//Removes a specified element from the list
-	public void remove(int num) {
+	public void remove(int num)
+	{
 		int position = search(num);
 		
-		while (position != -1) {
-			for (int index = position; index < LIST_SIZE - 1; index++) {
+		while (position != -1)
+		{
+			for (int index = position; index < LIST_SIZE - 1; index++)
+			{
 				list[index] = list[index + 1];
 			}
 			
@@ -50,18 +59,22 @@ public class SimpleList {
 	}
 	
 	//Getter method for the count variable
-	public int count() {
+	public int count()
+	{
 		return count;
 	}
 	
 	//Returns a formated string version of the list array
-	public String toString() {
+	public String toString()
+	{
 		String output = "";
 		
-		for (int index = 0; index < count; index++) {
+		for (int index = 0; index < count; index++)
+		{
 			output += list[index];
 			
-			if (index < count - 1) {
+			if (index < count - 1)
+			{
 				output += " ";
 			}
 		}
@@ -70,9 +83,11 @@ public class SimpleList {
 	}
 	
 	//Gives the first index of a specified number
-	public int search(int num) {
+	public int search(int num)
+	{
 		int position = -1;
-		for (int index = count - 1; index >= 0; index--) {
+		for (int index = count - 1; index >= 0; index--)
+		{
 			if (list[index] == num)
 				position = index;
 		}
@@ -82,7 +97,8 @@ public class SimpleList {
 	
 	
 	//Used for testing only
-	public int[] getArr() {
+	public int[] getArr()
+	{
 		return list;
 	}
 }
